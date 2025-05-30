@@ -19,4 +19,6 @@ class User(models.Model):
     email = models.EmailField()
     payment_status = models.CharField(max_length=10, choices=[('Paid', 'Paid'), ('Unpaid', 'Unpaid')])
     deal_metre = models.IntegerField(default=0)
+    def __str__(self):
+        return self.username
    

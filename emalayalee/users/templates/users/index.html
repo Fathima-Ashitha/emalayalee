@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  {% block title %}<title>Community Deals Platform</title>{%endblock %}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <style>
+    .hero {
+      max-width: 600px;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+      text-align: center;
+      margin: auto;
+      margin-top: 10vh;
+    }
+    .btn-join {
+      margin-top: 25px;
+      padding: 15px 40px;
+      font-size: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+  {% block content %}
+  <div class="hero">
+    <h1>Welcome to {{ community.name }} Community</h1>
+    <p>Join {{ community.name }} to discover amazing deals, participate in contests, and connect with merchants and admins.</p>
+    <a href="/register" class="btn btn-primary btn-join">Join {{ community.name }}</a>
+  </div>
+  {% endblock %}
+</body>
+</html>
